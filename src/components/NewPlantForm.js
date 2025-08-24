@@ -9,18 +9,18 @@ function NewPlantForm({ onAddPlant }) {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setFormData({...NewPlantForm.formData, [name]: value });
+    setFormData({ ...formData, [name]: value });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     const newPlant = {
-        name: formData.name,
-        image: formData.image,
-        price: parseFloat(formData.price),
+      name: formData.name,
+      image: formData.image,
+      price: parseFloat(formData.price),
     };
     onAddPlant(newPlant);
-    setFormData({ nsme: "", image: "", price: "" });
+    setFormData({ name: "", image: "", price: "" });
   }
 
   return (
@@ -28,24 +28,26 @@ function NewPlantForm({ onAddPlant }) {
       <h2>New Plant</h2>
       <form onSubmit={handleSubmit}>
         <input 
-        type="text" name="name" 
-        placeholder="Plant name" 
-        value={formData.name}
-        onChange={handleChange}
+          type="text" 
+          name="name" 
+          placeholder="Plant name" 
+          value={formData.name}
+          onChange={handleChange}
         />
         <input 
-        type="text" 
-        name="image" 
-        placeholder="Image URL" 
-        value={formData.image}
-        onChange={handleChange}
+          type="text" 
+          name="image" 
+          placeholder="Image URL" 
+          value={formData.image}
+          onChange={handleChange}
         />
-        <input type="number" 
-        name="price" 
-        step="0.01" 
-        placeholder="Price" 
-        value={formData.price}
-        onChange={handleChange}
+        <input 
+          type="number" 
+          name="price" 
+          step="0.01" 
+          placeholder="Price" 
+          value={formData.price}
+          onChange={handleChange}
         />
         <button type="submit">Add Plant</button>
       </form>
@@ -54,3 +56,9 @@ function NewPlantForm({ onAddPlant }) {
 }
 
 export default NewPlantForm;
+
+/*
+uses controlled inputs
+calls onAddPlant which is coded in PlantPage
+clears the form after submission
+ */

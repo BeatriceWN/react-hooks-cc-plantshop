@@ -16,19 +16,31 @@ function PlantPage() {
 
 //adding a new plant
 function handleAddPlant(newPlant) {
+  const plantWithSoldOut = { ...newPlant, soldOut: false };
+
   fetch("http://localhost:6001/plants", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(newPlant),
+    body: JSON.stringify(plantWithSoldOut),
   })
   .then(res => res.json())
   .then(data => setPlants([...plants, data]));
 }
-//toggle sold out local state
+
+//toggle sold out
 function toggleSoldOut(id) {
-  setPlants(plants.map(plant => 
-   plant.id === id ? { ...plant, soldout: !plantsoldOut } : plant
-  ))
+  const plantToUpdate = plants.find(plant => plant.id === id);
+  const updatedSoldOut = !plantToUpdate.soldOut;
+
+  fetch(`http://localhost:6001/plants/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+   body: JSON.stringify({ soldOut: updatedSoldOut }),
+  })
+  .then(res => res.json())
+  .then(updatedPlant => 
+    setPlants(plants.map(plant => plant.id === id ? updatedPlant : plant))
+  );
 }
 
 //update the price with PATCH method
@@ -47,7 +59,7 @@ function toggleSoldOut(id) {
 //deleted plant handling
 function deletePlant(id) {
   fetch(`http://localhost:6001/plants/${id}`, { method: "DELETE" })
-  .then(() => setPlants(plant.filter(plants => plant.id !== id)));
+  .then(() => setPlants(plants.filter(plant => plant.id !== id)));
 }
 
 //filtered list

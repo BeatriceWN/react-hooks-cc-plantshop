@@ -5,38 +5,37 @@ function PlantCard({ plant, toggleSoldOut, updatePrice, deletePlant }) {
 
   return (
     <li className="card" data-testid="plant-item">
-      <img src={`/images/${plant.image}`} 
-        alt={plant.name} 
-        className="plant-image" 
-      />
-      <h4>{"plant name"}</h4>
-      <p>Price: {"plant price"}</p>
-      
-      {/* toggle stock button */}
-       {plant.soldOut ? (
-        <button onClick={() => toggleSoldOut(plant.id)}>Out of Stock</button>
+      <img src={plant.image} alt={plant.name} className="plant-image" />
+      <h4>{plant.name}</h4>
+      <p>Price: ${plant.price}</p>
+
+      {/* Toggle stock button */}
+      {plant.soldOut ? (
+        <button className="sold-out" onClick={() => toggleSoldOut(plant.id)}>
+          Out of Stock
+        </button>
       ) : (
         <button className="primary" onClick={() => toggleSoldOut(plant.id)}>
           In Stock
         </button>
       )}
 
-      {/* update price */}
+      {/* Update price */}
       <div>
         <input
           type="number"
           value={newPrice}
-          onChange={e => setNewPrice(parseFloat(e.target.value))}
+          onChange={(e) => setNewPrice(parseFloat(e.target.value) || 0)}
         />
-        <button onClick={() => updatePrice(plant.id, newPrice)}>
-        Update Price
+        <button className="primary" onClick={() => updatePrice(plant.id, newPrice)}>
+          Update Price
         </button>
-        </div>
+      </div>
 
-        {/* delete plant */}
-        <button onClick={() => deletePlant(plant.id)} style={{ color: "red" }}>
-          Delete
-        </button>
+      {/* Delete plant */}
+      <button className="delete" onClick={() => deletePlant(plant.id)}>
+        Delete
+      </button>
     </li>
   );
 }

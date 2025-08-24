@@ -13,7 +13,7 @@ function Search({ searchTerm, setSearchTerm }) {
         id="search"
         placeholder="Type a name to search..."
         value={searchTerm}
-        onChange={(e) => console.log("Searching...")}
+        onChange={handleChange}
       />
     </div>
   );
@@ -21,5 +21,9 @@ function Search({ searchTerm, setSearchTerm }) {
 
 export default Search;
 
-import React from "react";
-
+/*
+it’s a controlled input
+gets searchTerm and setSearchTerm from PlantPage
+each keystroke updates state in PlantPage
+PlantPage filters the plants before passing them to PlantList
+ */
