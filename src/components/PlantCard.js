@@ -1,16 +1,18 @@
-import React from "react";
-import
+import React, { useState } from "react";
 
 function PlantCard({ plant, toggleSoldOut, updatePrice, deletePlant }) {
   const [newPrice, setNewPrice] = useState(plant.price);
 
   return (
     <li className="card" data-testid="plant-item">
-      <img src={plant.name} alt={"plant name"} />
+      <img src={`/images/${plant.image}`} 
+        alt={plant.name} 
+        className="plant-image" 
+      />
       <h4>{"plant name"}</h4>
       <p>Price: {"plant price"}</p>
       
-      //toggle stock
+      {/* toggle stock button */}
        {plant.soldOut ? (
         <button onClick={() => toggleSoldOut(plant.id)}>Out of Stock</button>
       ) : (
@@ -19,7 +21,7 @@ function PlantCard({ plant, toggleSoldOut, updatePrice, deletePlant }) {
         </button>
       )}
 
-      //update price
+      {/* update price */}
       <div>
         <input
           type="number"
@@ -31,7 +33,7 @@ function PlantCard({ plant, toggleSoldOut, updatePrice, deletePlant }) {
         </button>
         </div>
 
-        //delete plant
+        {/* delete plant */}
         <button onClick={() => deletePlant(plant.id)} style={{ color: "red" }}>
           Delete
         </button>
@@ -40,3 +42,10 @@ function PlantCard({ plant, toggleSoldOut, updatePrice, deletePlant }) {
 }
 
 export default PlantCard;
+
+/*
+display each plant’s details
+toggle in stock / out of stock
+allow updating price (PATCH)
+allow deleting plant (DELETE)
+ */
