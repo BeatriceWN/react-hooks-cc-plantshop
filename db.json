@@ -54,6 +54,27 @@
       "image": "https://cdn.mafrservices.com/sys-master-root/h73/h19/26929287921694/106882_main.jpg?im=Resize=1700",
       "price": 8.99,
       "id": 8
+    },
+    {
+      "name": "Bonsai tree",
+      "image": "https://cdn-dgbjm.nitrocdn.com/mdAxzMJrsWwnFZJhQeMnliPmvMzPHLTu/assets/images/optimized/rev-619b595/thebudgrower-assets.s3.us-west-1.amazonaws.com/wp-content/uploads/2021/10/24151228/devin-h-PAEwrnasOvY-unsplash-scaled.jpg",
+      "price": 1200000.99,
+      "soldOut": false,
+      "id": 9
+    },
+    {
+      "name": "Natti Hibiscus",
+      "image": "https://admin.thegreenyard.in/uploads/product_images/2024798283-Natti-Hibiscus-Red.jpg",
+      "price": 3.42,
+      "soldOut": false,
+      "id": 10
+    },
+    {
+      "name": "Bamboo Grass",
+      "image": "https://admin.thegreenyard.in/uploads/product_images/792001529-Bamboo-Grass_icon.jpg",
+      "price": 5.99,
+      "soldOut": false,
+      "id": 11
     }
   ]
 }
