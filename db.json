@@ -4,54 +4,55 @@
       "id": 1,
       "name": "Aloe",
       "image": "./images/aloe.jpg",
-      "price": 15.99,
-      "soldOut": false
+      "soldOut": false,
+      "price": 15.99
     },
     {
       "id": 2,
       "name": "ZZ Plant",
       "image": "./images/zz-plant.jpg",
-      "price": 25.98,
-      "soldOut": false
+      "soldOut": false,
+      "price": 25.98
     },
     {
       "id": 3,
       "name": "Pilea peperomioides",
       "image": "./images/pilea.jpg",
-      "price": 5.99,
-      "soldOut": false
+      "soldOut": false,
+      "price": 5.99
     },
     {
       "id": 4,
       "name": "Pothos",
       "image": "./images/pothos.jpg",
-      "price": 12.11,
-      "soldOut": false
+      "soldOut": false,
+      "price": 12.11
     },
     {
       "id": 5,
       "name": "Jade",
       "image": "./images/jade.jpg",
-      "price": 10.37,
-      "soldOut": false
+      "soldOut": false,
+      "price": 10.37
     },
     {
       "id": 6,
       "name": "Monstera Deliciosa",
       "image": "./images/monstera.jpg",
-      "price": 25.99,
-      "soldOut": false
+      "soldOut": false,
+      "price": 25.99
     },
     {
       "id": 7,
       "name": "Fiddle Leaf Fig",
       "image": "./images/fiddle-leaf-fig.jpg",
-      "price": 55,
-      "soldOut": false
+      "soldOut": false,
+      "price": 55
     },
     {
       "name": "Rosemary",
       "image": "https://cdn.mafrservices.com/sys-master-root/h73/h19/26929287921694/106882_main.jpg?im=Resize=1700",
+      "soldOut": false,
       "price": 8.99,
       "id": 8
     },
@@ -65,15 +66,15 @@
     {
       "name": "Natti Hibiscus",
       "image": "https://admin.thegreenyard.in/uploads/product_images/2024798283-Natti-Hibiscus-Red.jpg",
-      "price": 3.42,
       "soldOut": false,
+      "price": 3.42,
       "id": 10
     },
     {
       "name": "Bamboo Grass",
       "image": "https://admin.thegreenyard.in/uploads/product_images/792001529-Bamboo-Grass_icon.jpg",
-      "price": 5.99,
       "soldOut": false,
+      "price": 5.99,
       "id": 11
     }
   ]

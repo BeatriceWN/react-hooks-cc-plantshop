@@ -6,7 +6,7 @@ function PlantList({ plants, toggleSoldOut, updatePrice, deletePlant }) {
     <ul className="cards">
       {plants.map(plant => (
         <PlantCard 
-        key={plant.id}
+        key={plant.id || plant.name}
         plant={plant}
         toggleSoldOut={toggleSoldOut}
         updatePrice={updatePrice}
@@ -18,6 +18,8 @@ function PlantList({ plants, toggleSoldOut, updatePrice, deletePlant }) {
 }
 
 export default PlantList;
+
+
 
 /* 
 loop through plants array

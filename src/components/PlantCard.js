@@ -7,7 +7,7 @@ function PlantCard({ plant, toggleSoldOut, updatePrice, deletePlant }) {
     <li className="card" data-testid="plant-item">
       <img src={plant.image} alt={plant.name} className="plant-image" />
       <h4>{plant.name}</h4>
-      <p>Price: ${plant.price}</p>
+      <p>Price: {plant.price}</p>
 
       {/* Toggle stock button */}
       {plant.soldOut ? (
@@ -27,7 +27,10 @@ function PlantCard({ plant, toggleSoldOut, updatePrice, deletePlant }) {
           value={newPrice}
           onChange={(e) => setNewPrice(parseFloat(e.target.value) || 0)}
         />
-        <button className="primary" onClick={() => updatePrice(plant.id, newPrice)}>
+        <button
+          className="primary"
+          onClick={() => updatePrice(plant.id, newPrice)}
+        >
           Update Price
         </button>
       </div>
